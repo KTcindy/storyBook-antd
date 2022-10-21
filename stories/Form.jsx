@@ -1,9 +1,9 @@
-import React, { createElement, useEffect, useImperativeHandle } from 'react';
+import React, { useEffect, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button } from 'antd';
-import * as cup from '../stories/FormComponent';
+import * as com from './FormComponent/components.jsx';
 import { FilterOutlined, SearchOutlined, RedoOutlined } from '@ant-design/icons';
-// import './FormComponent/formStyle.less';
+// import './FormComponent/formStyle.scss';
 const FormItem = Form.Item;
 const FormComponent = ({
   columns,
@@ -51,7 +51,7 @@ const FormComponent = ({
         )}
         {columns.map(n => {
           const { type = 'input' } = n,
-            C = cup[type];
+            C = com[type]
           return (
             <FormItem
               label={n.label}
@@ -78,12 +78,39 @@ const FormComponent = ({
 };
 
 FormComponent.propTypes = {
-  columns: PropTypes.array.isRequired,
+  /**
+   * 表单的item项 如果不清楚具体配置项作用可看 columns配置文档
+   */
+  columns: PropTypes.array,
+  /**
+   * 表单内容填充回显
+   */
   data: PropTypes.object,
+  /**
+   * 父组件传递的ref
+   */
   cRef: PropTypes.object,
-  initialValues: PropTypes.object
+  /**
+   * 表单默认回显项
+   */
+  initialValues: PropTypes.object,
+  /**
+   * 表单的显示类型 配合父级classNmae样式定制 不同类型样式 
+   * */ 
+   formType: PropTypes.oneOf(['form','seach']),
+  /**
+   * form表单的响应式样式布局
+   */
+  layout: PropTypes.object,
+  /**
+   * 此配置配合formType为‘seach’时使用
+   */
+  tailLayout: PropTypes.object,
+   
+
 };
 FormComponent.defaultProps = {
+  columns: [{}],
   formType: 'form',
   layout: {
     labelCol: { span: 6 },

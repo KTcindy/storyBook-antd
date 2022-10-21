@@ -69,7 +69,7 @@ import PropTypes from 'prop-types';
 import { Form, Button } from 'antd';
 import * as cup from './components.jsx';
 import { FilterOutlined, SearchOutlined, RedoOutlined } from '@ant-design/icons';
-import './formStyle.less';
+import './formStyle.sass';
 const FormItem = Form.Item;
 const FormComponent = ({
   columns,

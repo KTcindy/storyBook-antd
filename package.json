@@ -13,12 +13,17 @@
     "@storybook/manager-webpack4": "^6.5.12",
     "@storybook/react": "^6.5.12",
     "@storybook/testing-library": "0.0.13",
-    "babel-loader": "^8.2.5"
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1"
   },
   "dependencies": {
+    "@storybook/preset-scss": "^1.0.3",
     "antd": "^4.23.6",
-    "less": "^4.1.3",
+    "node-sass": "^4.14.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "sass": "^1.55.0"
   }
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Form, Button } from 'antd';
 import * as cup from './components.jsx';
 import { FilterOutlined, SearchOutlined, RedoOutlined } from '@ant-design/icons';
-// import './formStyle.less';
+import './formStyle.sass';
 const FormItem = Form.Item;
 const FormComponent = ({
   columns,
@@ -36,7 +36,6 @@ const FormComponent = ({
   }, []);
   // const type = formType === 'seach';
   // const C = (type = 'input') => cup[type];
-  // console.log(C('input'),'input');
   return (
     <>
       <Form
@@ -53,8 +52,8 @@ const FormComponent = ({
         )}
         {columns.map(n => {
           // console.log(n,'---')
-          const { type = 'input' } = n
-           const C = cup[type];
+          const { type = 'input' } = n,
+            C = cup[type]
           return (
             <FormItem
               label={n.label}
