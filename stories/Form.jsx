@@ -14,6 +14,8 @@ const FormComponent = ({
   layout,
   tailLayout
 }) => {
+  console.log(columns, '--');
+
   //通过Form.useForm对表单数据域进行交互。useForm是React Hooks的实现，只能用于函数组件
   const [form] = Form.useForm();
   //cRef就是父组件传过来的ref
