@@ -1,9 +1,9 @@
 import React, { createElement } from 'react';
 import { Input, Select, DatePicker, Button, Checkbox, Radio, TreeSelect } from 'antd';
-// import PopupInput from '../PopupInput/index';
-// import TinyMce from '@/components/TinyMce';
-// import ImgUpload from '@/components/ImgUpload/index';
-// import ButtonUpload from '@/components/ButtonUpload';
+import PopupInput from './PopupInput/index';
+// import TinyMce from './TinyMce';
+// import ImgUpload from './ImgUpload/index';
+// import ButtonUpload from './ButtonUpload';
 const { Password } = Input;
 const { Option } = Select;
 const { Group } = Radio;
@@ -47,7 +47,7 @@ const treeSelect = ({ props, list = [], callback = () => {} }) =>
 const input = ({ props, events }) => createElement(Input, { ...events, ...props });
 const password = ({ props }) => createElement(Password, { ...props });
 const datePicker = ({ props }) => <DatePicker {...props} format="YYYY-MM-DD" />;
-// const popupInput = ({ props }) => <PopupInput {...props} />;
+const popupInput = ({ props }) => <PopupInput {...props} />;
 // const editor = ({ props }) => <TinyMce {...props} />;
 // const imgUpload = ({ props }) => <ImgUpload {...props} />;
 // const buttonUpload = ({ props }) => <ButtonUpload {...props} />;
@@ -57,7 +57,7 @@ export {
   input,
   password,
   datePicker,
-  // popupInput,
+  popupInput,
   // editor,
   // imgUpload,
   // buttonUpload,
