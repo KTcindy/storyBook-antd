@@ -10,7 +10,6 @@ export default {
 };
 
 const Template = (args) => {
-  // console.log(args,'columnslist');
   const childRef = useRef();
   return (
     <FormView {...args} cRef={childRef} />
@@ -25,15 +24,4 @@ Form.args = {
     }
   ]
 }
-const Temptab = (columnslist) => {
-  console.log(columnslist,'columnslist');
-  return <FormView {...columnslist} />
-}
-export const Columns = Temptab.bind({})
-Columns.columnslist = {
-  columns: [{
-    name: 'userName',
-    label: '用户名',
-    rules: [{ required: false, message: '请输入用户名' }]
-  }]
-}
+

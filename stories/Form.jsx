@@ -14,8 +14,6 @@ const FormComponent = ({
   layout,
   tailLayout
 }) => {
-  console.log(columns, '--');
-
   //通过Form.useForm对表单数据域进行交互。useForm是React Hooks的实现，只能用于函数组件
   const [form] = Form.useForm();
   //cRef就是父组件传过来的ref
@@ -81,7 +79,21 @@ const FormComponent = ({
 
 FormComponent.propTypes = {
   /**
-   * 表单的item项 如果不清楚具体配置项作用可看 columns配置文档
+   * 表单的item项 
+   * 
+   * name => key => String
+   * 
+   * label => label => String
+   * 
+   * type => component（input、select）=> String
+   * 
+   * rules => rule => Array
+   * 
+   * props => componentProps(disabled、placeholder、clearIcon) =>Object
+   * 
+   * list => 包含子项配置（select、checkGroup） => Array
+   * 
+   * events => item 回调事件 如onchang、onBlur =>   Object
    */
   columns: PropTypes.array,
   /**
