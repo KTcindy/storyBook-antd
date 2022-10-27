@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import FormView from './Form';
+import ColumnsView from './Columns';
+import Markdown from 'react-markdown'
 export default {
   title: 'Example/Form',
   component: FormView,
@@ -24,4 +26,8 @@ Form.args = {
     }
   ]
 }
+const Columns = () => {
+  return (<div><ColumnsView/></div>)
+}
+export const columns = Columns.bind({});
 
