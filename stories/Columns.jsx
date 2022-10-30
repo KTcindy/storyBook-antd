@@ -1,18 +1,19 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown';
-// import ReactMarkdown from 'react-markdown/with-html';
+import remarkGfm from 'remark-gfm';
 import md from '../form.md'
-export default function Columns() {
+import './form.css'
+export default function Columns () {
   return (
-      <div>
-          {/* <Markdown source={md} /> */}
-          <ReactMarkdown
-              className="markdown-body"
-              
-              escapeHtml={false}
-          >
-              { md}
-              </ReactMarkdown>
+    <div>
+      {/* <Markdown source={md} /> */}
+      <ReactMarkdown
+        className="markdown-body"
+        children={md}
+        remarkPlugins={[remarkGfm]}
+      >
+
+      </ReactMarkdown>
     </div>
   )
 }

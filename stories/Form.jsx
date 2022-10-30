@@ -79,21 +79,7 @@ const FormComponent = ({
 
 FormComponent.propTypes = {
   /**
-   * 表单的item项 
-   * 
-   * name => key => String
-   * 
-   * label => label => String
-   * 
-   * type => component（input、select）=> String
-   * 
-   * rules => rule => Array
-   * 
-   * props => componentProps(disabled、placeholder、clearIcon) =>Object
-   * 
-   * list => 包含子项配置（select、checkGroup） => Array
-   * 
-   * events => item 回调事件 如onchang、onBlur =>   Object
+   * 表单的item项  具体配置具体查看 Columns 配置
    */
   columns: PropTypes.array,
   /**
