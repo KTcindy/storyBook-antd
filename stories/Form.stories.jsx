@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import FormView from './Form';
+import ColumnsView from './Columns';
 export default {
   title: 'Example/Form',
   component: FormView,
@@ -10,7 +11,6 @@ export default {
 };
 
 const Template = (args) => {
-  // console.log(args,'columnslist');
   const childRef = useRef();
   return (
     <FormView {...args} cRef={childRef} />
@@ -21,19 +21,17 @@ Form.args = {
   columns: [
     {
       name: 'userName', label: '用户名',
-      rules: [{ required: false, message: '请输入用户名' }]
+      type:'popupInput',
+      rules: [{ required: false, message: '请输入用户名' }],
+      props: {
+        title: 'xxx',
+        placeholder:'请输入'
+      }
     }
   ]
 }
-const Temptab = (columnslist) => {
-  console.log(columnslist,'columnslist');
-  return <FormView {...columnslist} />
+const Columns = () => {
+  return (<div><ColumnsView/></div>)
 }
-export const Columns = Temptab.bind({})
-Columns.columnslist = {
-  columns: [{
-    name: 'userName',
-    label: '用户名',
-    rules: [{ required: false, message: '请输入用户名' }]
-  }]
-}
+export const columns = Columns.bind({});
+
