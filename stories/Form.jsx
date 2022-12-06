@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Form, Button } from 'antd';
 import * as com from './FormComponent/components.jsx';
 import { FilterOutlined, SearchOutlined, RedoOutlined } from '@ant-design/icons';
-// import './FormComponent/formStyle.scss';
+// import './FormComponent/formStyle.less';
 const FormItem = Form.Item;
 const FormComponent = ({
   columns,
@@ -50,7 +50,8 @@ const FormComponent = ({
           </div>
         )}
         {columns.map(n => {
-          const { type = 'input' } = n,
+          try { 
+            const { type = 'input' } = n,
             C = com[type]
           return (
             <FormItem
@@ -63,6 +64,10 @@ const FormComponent = ({
               {C(n)}
             </FormItem>
           );
+          } catch(error) {
+            throw new Error(error);
+          }
+         
         })}
         {type && (
           <FormItem className="ant-form-item" {...tailLayout}>

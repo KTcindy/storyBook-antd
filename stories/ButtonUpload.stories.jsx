@@ -13,6 +13,6 @@ const Template=(args)=> {
         <div><ButtonUpload {...args} /></div>
     )
 }
-export const Form = Template.bind({});
+export const  Upload= Template.bind({});
 
   
